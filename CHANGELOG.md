@@ -3,7 +3,7 @@
 ## [Unreleased]
 
 ### Added
-- Redesign the 1-pager as a single A4 page with live link, QR, evals summary, memes and stickers.
+- Restyle the 1-pager as a plain Google Docs-style A4 page with live link, evals table and a small meme table.
 - Fit the desktop presentation on one scaled, scroll-free stage at any screen size.
 - Deploy to GitHub Pages as growwz from a prebuilt gh-pages branch.
 - Pair Plus Jakarta Sans for headings and money with Inter for body text.

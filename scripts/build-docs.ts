@@ -1,6 +1,5 @@
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { marked } from "marked";
-import QRCode from "qrcode";
 
 const appUrl = "https://siddham-jain.github.io/growwz/";
 
@@ -46,17 +45,11 @@ function page(source: string, target: string, title: string) {
   writeFileSync(target, html);
 }
 
-// the 1-pager is hand-designed html; only the qr code, links and screenshots are filled in here
-const qr = await QRCode.toString(appUrl, { type: "svg", margin: 0, color: { dark: "#0b2a20", light: "#ffffff" } });
+// the 1-pager is hand-written html in google-docs style; only the links are filled in here
 const brief = readFileSync("docs/one-pager.html", "utf8")
-  .replaceAll("{{QR}}", qr)
   .replaceAll("{{URL}}", appUrl)
   .replaceAll("{{URL_SHORT}}", appUrl.replace(/^https:\/\//, "").replace(/\/$/, ""));
 writeFileSync("public/brief.html", brief);
-mkdirSync("public/brief", { recursive: true });
-copyFileSync("docs/screens/08-home-demo.png", "public/brief/home.png");
-copyFileSync("docs/screens/14b-freelancer-payment-split.png", "public/brief/payday.png");
-copyFileSync("docs/screens/20-fno-reality.png", "public/brief/fno.png");
 
 page("EVALS.md", "public/evals.html", "Groww for Gen Z — Evals");
 console.log("docs built");
