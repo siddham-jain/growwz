@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f6f7f8;
+  --surface-3: #eef0f2;
+  --line: #e9e9eb;
+  --ink: #2b2d3a;
+  --ink-2: #5c5e6d;
+  --ink-3: #9a9caa;
+  --mint: #00d09c;
+  --mint-ink: #003d2e;
+  --mint-soft: #e6faf4;
+  --pos: #007a5c;
+  --neg: #c9402a;
+  --neg-soft: #fdeeea;
+  --blue: #5367ff;
+  --blue-soft: #eef0ff;
+  --amber: #a15c00;
+  --amber-soft: #fff4e0;
+  --shell: #f1f3f5;
+  --shadow: 0 1px 2px rgb(16 24 40 / 0.04), 0 4px 16px rgb(16 24 40 / 0.06);
+}
+
+.dark {
+  --bg: #0e0f11;
+  --surface: #17181b;
+  --surface-2: #1f2024;
+  --surface-3: #2a2b30;
+  --line: #2a2b30;
+  --ink: #f4f5f7;
+  --ink-2: #a9abb6;
+  --ink-3: #6d6f7b;
+  --mint-soft: #0d2a22;
+  --pos: #00d09c;
+  --neg: #ff7a5c;
+  --neg-soft: #2e1813;
+  --blue: #8593ff;
+  --blue-soft: #1c1f3a;
+  --amber: #ffb547;
+  --amber-soft: #2c2210;
+  --shell: #050506;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4);
+}
+
+@theme inline {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-mint: var(--mint);
+  --color-mint-ink: var(--mint-ink);
+  --color-mint-soft: var(--mint-soft);
+  --color-pos: var(--pos);
+  --color-neg: var(--neg);
+  --color-neg-soft: var(--neg-soft);
+  --color-blue: var(--blue);
+  --color-blue-soft: var(--blue-soft);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-shell: var(--shell);
+  --shadow-card: var(--shadow);
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--shell);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+button { cursor: pointer; }
+.num { font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 8px; }

@@ -1,0 +1,197 @@
+[
+  {
+    "persona": "Riya, 23, first-job business analyst in Bengaluru, Rs 42k/month take-home, Rs 18k idle in savings, scared of jargon and of \"doing it wrong\"",
+    "scores": {
+      "clarity": 4,
+      "trust": 4,
+      "motivation": 4,
+      "calm": 4,
+      "fitForMyIncome": 3
+    },
+    "wouldStart": true,
+    "topFrictions": [
+      {
+        "screen": "05-amount.png",
+        "issue": "The app never asks about money I already have. I've got Rs 18k sitting in savings, which is the most obvious first move, and the only question is a monthly slider (Rs 100-10,000, no link to my salary). The tip also says 'starting at 22' and I'm 23, which makes it feel generic.",
+        "fix": "Add one step: 'Got savings sitting idle?' If yes, suggest moving part of it into the Emergency cushion liquid fund as a one-time top-up, with a line comparing the liquid fund's ~6.8% to a ~3% savings account. Use my real age in the tip copy."
+      },
+      {
+        "screen": "06-starter-plan.png",
+        "issue": "The numbers don't add up and it makes me feel I got something wrong. I picked Rs 1,500 but the plan totals Rs 1,300 (700+300+300). Freedom fund is tagged 'Growth · Big swings, short-term' on a 2036 goal, which contradicts itself. 'Rs 8k by Oct 2027' sits next to 'the full Rs 60k needs Rs 4,900/month', so I can't tell what my actual goal is.",
+        "fix": "Make the stash amounts add up to what I chose, or show the leftover ('Rs 200 unassigned, add it to...'). Change the Freedom fund label to 'Big swings, fine for long-term'. Show one goal per stash with the milestone as a progress marker, not as a second target."
+      },
+      {
+        "screen": "18-invest.png",
+        "issue": "Big green 3Y returns are the most prominent thing on every card. Gold shows +18.4%, the highest number, but it's tagged 'Balanced', so my reels brain wants to put everything in gold. That cuts against the calm, goal-first approach the rest of the app teaches.",
+        "fix": "Lead each card with 'Good for: goals under 2 yrs / 3-7 yrs / 10+ yrs' and the swings meter. Show returns as a smaller range (e.g. 'past 3Y: -5% to +25% in a year') with a tap-to-decode on '3Y avg'. Explain why gold counts as 'Balanced'."
+      },
+      {
+        "screen": "14-payday-split.png",
+        "issue": "Onboarding said Rs 1,500 was my comfortable amount, then payday pre-fills Rs 7,500 (18%) as my 'usual amounts' with a big Invest button. That's a 5x jump with no explanation. Rs 34,500 left for 'needs & wants' doesn't account for Bengaluru rent, so I'd worry I'm overcommitting.",
+        "fix": "Pre-fill the split from what I actually set (Rs 1,500), and show a one-tap 'bump to X?' suggestion separately. Let me enter rent and fixed bills once so the 'what's left' number is real before I confirm."
+      }
+    ],
+    "topDelights": [
+      "Tap-to-decode on 'Expense ratio' (12-decode.png) puts it in rupees ('Rs 19/yr for you'). That's the first time a fee has made sense to me without googling.",
+      "The app added an Emergency cushion for me and said why (06-starter-plan.png), and the stash screen explains 'Why this one for you' (11-stash-detail-plan.png). It feels like someone is checking I'm not doing it wrong.",
+      "Dip Coach plus the panic-sell pause (15-dip-coach.png, 16-panic-check.png) and the F&O reality check with SEBI numbers (20-fno-reality.png) are the counter-voice to the finance reels I watch. Calm mode hiding daily P&L also means I'd actually open the app."
+    ],
+    "quote": "I'd start with the Rs 100 this week because it finally explains things like a friend would, but when my own numbers don't match between screens I start thinking I've messed up already."
+  },
+  {
+    "persona": "Sana, 25, freelance designer in Pune, irregular income (Rs 15k-60k/month), burned by a no-cost EMI, wary of nudges and gamification",
+    "scores": {
+      "clarity": 4,
+      "trust": 3,
+      "motivation": 3,
+      "calm": 4,
+      "fitForMyIncome": 2
+    },
+    "wouldStart": false,
+    "topFrictions": [
+      {
+        "screen": "14-payday-split.png",
+        "issue": "The whole payday moment assumes a salary. The push says 'Salary just landed', it pre-fills 'your usual amounts' (I don't have usual amounts), and a one-tap 'Invest Rs 7,500' button sits right next to my rent money. I picked 'Freelancer / creator' on 02-vibe.png and nothing downstream changed. In a Rs 15k month this split is wrong, and one tap moves money before I've thought about it.",
+        "fix": "For freelancers, trigger on any credit above a threshold the user sets. Suggest a percentage of that specific payment (e.g. 10% of Rs 18,000 = Rs 1,800) instead of fixed rupee amounts, add a 'Keep a buffer of Rs X untouched' floor, and make 'Not this time' a full-size button equal to Invest."
+      },
+      {
+        "screen": "11-stash-detail-plan.png",
+        "issue": "'Step-up 10% every year' is switched ON by default and pitched as 'Grows with your salary. Barely noticeable, huge over time.' A payment that quietly goes up every year is exactly the 'no-cost EMI' feeling I got burned by, and I have no salary for it to grow with. Fixed-date UPI AutoPay on the 7th also ignores my cash flow.",
+        "fix": "Keep step-up off by default. Offer it as an opt-in with the exact new amount and date ('From Oct 2027 this becomes Rs 2,200'), and send a reminder to confirm before each increase. Let me pick 'Flex: I'll top up when paid' instead of AutoPay."
+      },
+      {
+        "screen": "24-squads.png",
+        "issue": "The lock line says 'Friends see progress %, never your amounts', yet Aarav's row says 'added Rs 2,000 on payday'. The app breaks its own privacy promise on the same screen. That would make me doubt every other claim in the app.",
+        "fix": "Remove rupee amounts from all squad activity lines ('Aarav added to Goa on payday'), or make amount sharing a per-person opt-in that is off by default and labelled clearly."
+      },
+      {
+        "screen": "05-amount.png",
+        "issue": "It asks for one fixed number 'each month', which I can't honestly give. The copy then calls it 'a month of OTT + a few coffees' and talks about 'the magic of starting at 22' (I'm 25, so this is hard-coded). On 06-starter-plan.png the three stashes add up to Rs 1,300, not the Rs 1,500 I chose, and the gap isn't explained. A Rs 60k emergency target is also too small for someone with no steady salary.",
+        "fix": "Let freelancers enter a range (lean month / good month) and build the plan off the lean number, with optional top-ups in good months. Use the real age from KYC, make the stashes add up to what I entered (or say where the rest goes), and size the emergency cushion for irregular income (6+ months of costs)."
+      }
+    ],
+    "topDelights": [
+      "Skip and Pause sit right next to the plan, and 17-new-stash-plan.png says 'No fees, no penalties'. That kind of control is what I actually want.",
+      "The numbers are honest: tough/likely/good ranges labelled 'Not a promise' (10-stash-detail.png), expense ratio shown as 'Rs 19/yr for you', exit load and Direct plan spelled out, and Decode (12-decode.png) explains a term without talking down to me.",
+      "Calm mode is on by default with a visible 'Turn off' link, and the F&O screen (20-fno-reality.png) leads with SEBI's loss numbers and a cited source instead of hype."
+    ],
+    "quote": "I like that you show me fees and bad-year numbers, but a payment that steps itself up by default and a squad screen showing a friend's rupee amount right under 'never your amounts' are exactly the small print I've learned to walk away from, so this week I'm only browsing."
+  },
+  {
+    "persona": "Kabir, 24, sales executive in Delhi. Watches F&O YouTube, lost Rs 30k in options last year, still chasing fast money, finds SIPs boring.",
+    "scores": {
+      "clarity": 4,
+      "trust": 4,
+      "motivation": 2,
+      "calm": 4,
+      "fitForMyIncome": 3
+    },
+    "wouldStart": false,
+    "topFrictions": [
+      {
+        "screen": "20-fno-reality.png / 21-fno-quiz.png",
+        "issue": "I already lost 30k, so the 91-of-100 stat isn't news to me. The first quiz question (a flat Nifty call goes to about zero) is basic enough to feel patronising. Then a 24h cool-off on top tells me Groww doesn't trust me. Opening an Upstox or Dhan account takes less time than waiting 24 hours, so this is where I leave.",
+        "fix": "Make it personal and give me control instead of a lockout. Show my own real numbers (\"you lost Rs 30k across 40 trades, average hold 1.5 days, 70% of it to theta\"). Make the cool-off a one-time thing when F&O is first turned on, not something that comes back every time. Let me set my own monthly F&O loss cap that hard-stops trading once I hit it. Use tougher questions (IV crush, theta on expiry day, lot-size margin) so passing feels earned, not like a baby test."
+      },
+      {
+        "screen": "06-starter-plan.png",
+        "issue": "Rs 300 a month into a Freedom fund to get Rs 67k by 2036, plus Rs 300 for a Rs 2k Goa trip. For a 24-year-old who wants money to move, that's zero excitement. Nothing in the plan feels like it's for me, so I don't fund any of it.",
+        "fix": "Add an optional 'Spice' stash: a capped high-risk pot (for example at most 10-15% of monthly investing) for single stocks, small-cap or momentum index funds, with its own P&L view. The urge to take risks stays inside the app with a ceiling, instead of moving to another broker with no ceiling. Also show a 12-month milestone, not just the 2036 number."
+      },
+      {
+        "screen": "07-home-new.png",
+        "issue": "A slot-machine 'Trading trap' story sits right on my home tray, and 01-welcome takes a dig at 'finance bro energy'. That's exactly how I see myself, so from screen one I feel like the app is mocking the person it's trying to win over.",
+        "fix": "Rename the story to something neutral and useful, like 'How option payouts really work' with a chart icon. Cut the bro jab from the welcome copy and lead with something a trader respects, like 'Rs 0 brokerage on funds, real numbers on everything'."
+      },
+      {
+        "screen": "18-invest.png",
+        "issue": "The Invest tab shows only four funds. There's no visible way into stocks, ETFs or F&O apart from typing in search, so it feels like the trading features are being hidden from me. Gold is tagged 'Balanced' while showing the highest return (18.4%), which makes me trust the risk labels less.",
+        "fix": "Add a clear Funds / Stocks / Trade switch at the top of Invest, and put the F&O gate behind the Trade tab where I can see it. Tag gold under its own 'Hedge' label with its swing bars, instead of grouping it with the balanced fund."
+      }
+    ],
+    "topDelights": [
+      "The Trent stock page (19-stock.png) is the one screen built for me. 'You know it as Zudio', the 'What could go wrong' box and 'Ask yourself before buying' are the kind of homework my YouTube guys skip, and I can still buy without a gate.",
+      "The panic-sell sheet (16-panic-check.png) shows the exact rupee loss (Rs 755) and still lets me through with 'I need the money', so it feels like a check, not a nanny.",
+      "Payday split (14-payday-split.png) is genuinely one tap the day salary lands, before I can blow it. And Squads (24-squads.png) showing only % for the Goa trip is something I'd actually show the boys."
+    ],
+    "quote": "Bhai, I've already paid Rs 30k to learn that 9 out of 10 lose. Make me wait 24 hours to trade and I'll just open Dhan in ten minutes, but give me a capped pot to play with and the app's own numbers and I might actually stay."
+  },
+  {
+    "persona": "Arjun, 20, BCom student in Indore. Gets Rs 4k/month pocket money plus Rs 3-5k now and then from freelance video editing. Opened Groww only for IPO hype. Speaks Hinglish, uses a mid-range Android, impatient with long text.",
+    "scores": {
+      "clarity": 4,
+      "trust": 4,
+      "motivation": 3,
+      "calm": 4,
+      "fitForMyIncome": 2
+    },
+    "wouldStart": true,
+    "topFrictions": [
+      {
+        "screen": "05-amount.png",
+        "issue": "The slider starts at Rs 1,500, which is nearly 40% of my pocket money, and the tip says 'the magic of starting at 22' when I'm 20. It assumes a steady monthly income. My money comes in random chunks when a freelance client pays, and there's nowhere to say that.",
+        "fix": "Start the slider at Rs 300-500 for students, take the age from KYC, and add a toggle like 'Plus, jab freelance paisa aaye' that sets a % to sweep from irregular credits instead of a fixed monthly amount."
+      },
+      {
+        "screen": "14-payday-split.png",
+        "issue": "'Salary just landed' and a Rs 42,000 split are not my life. I don't have a payday. The whole pay-yourself-first moment, the best idea in the app, never fires for me.",
+        "fix": "Trigger on any incoming UPI credit above a threshold (pocket money, client payment) with copy like 'Rs 4,000 aaye - Rs 400 future-you ko?' and pre-fill a % split, not salary-sized amounts."
+      },
+      {
+        "screen": "02-vibe.png",
+        "issue": "'First job' is pre-selected, so a fast tapper like me would just hit Continue and get the wrong plan. I'm also a student and a freelancer, but I can only pick one.",
+        "fix": "Pre-select nothing, allow multi-select (Student + Freelancer), and offer Hindi/Hinglish here, because the whole app is English-only paragraphs."
+      },
+      {
+        "screen": "06-starter-plan.png",
+        "issue": "Too much text and maths for one screen: three cards, each with a 'full Rs 60k needs Rs 4,900/month' line. Rs 300/month toward Goa against a Rs 25k goal feels pointless, and 'Growth · Big swings, short-term' confused me because the fund is 10 years long. The IPO hype that brought me here isn't anywhere in the app either.",
+        "fix": "Show one stash with one amount and hide the milestone maths behind a tap. Fix the Growth label to 'Big swings, long-term'. Add an IPO card in Invest with the same reality-check treatment as F&O (listing-day stats, allotment odds) so my reason for coming is met, not ignored."
+      }
+    ],
+    "topDelights": [
+      "Starting with Rs 100 and a big 'Invest your first Rs 100' button on Home. That's an amount I can actually risk this week.",
+      "The F&O reality check with the 91-of-100 dot grid. One look and I get it, no reading needed, and it would honestly stop me from trying options after some Instagram reel.",
+      "A streak freeze 'for broke months. No guilt.' and Squads showing only %. My friends won't see I put in Rs 300 while Aarav put in Rs 2,000."
+    ],
+    "quote": "Rs 100 se start karna sahi hai bhai, lekin ye app maan ke chal raha hai ki meri salary aati hai. Meri toh pocket money aur kabhi kabhi client ka payment aata hai, aur jis IPO ke liye app khola tha woh kahin dikha hi nahi."
+  },
+  {
+    "persona": "Senior product designer at an Indian fintech. Reviewed with Nielsen heuristics, a behavioural-finance lens, Groww brand consistency and SEBI/AMFI compliance risk. Scores are from the point of view of a first-job investor aged 20-26.",
+    "scores": {
+      "clarity": 4,
+      "trust": 3,
+      "motivation": 4,
+      "calm": 4,
+      "fitForMyIncome": 4
+    },
+    "wouldStart": true,
+    "topFrictions": [
+      {
+        "screen": "10-stash-detail.png",
+        "issue": "The hero number is a projection given to the rupee: 'By Aug 2036, you'll likely have ₹6,68,590', in big green type. 05-amount.png does the same with '₹3.4L in a Nifty 50 index fund' and adds 'that's the magic'. This is false precision. Under the SEBI/AMFI advertising code it also reads as a scheme-linked return projection, and the small 'Not a promise' text does not offset it. The 'Tough year ₹4.4L' label is also wrong: one bad year does not set a 10-year outcome. A bad decade does. Number errors elsewhere weaken trust further. The three amounts on 06-starter-plan.png add up to ₹1,300/month, not the ₹1,500 the user chose. The '19-week streak' card on 08-home-demo.png draws only 8 bars.",
+        "fix": "Lead with the goal and the monthly amount, not a forecast. Show the outcome only as a rounded range (e.g. '₹4-8L'), labelled 'Illustration at an assumed X-Y% p.a., not linked to any scheme'. Rename the scenarios to 'Weak decade / Typical / Strong decade'. Remove 'likely have' and 'magic'. Add a QA check that plan totals match the amount the user chose."
+      },
+      {
+        "screen": "24-squads.png",
+        "issue": "The screen promises 'Friends see progress %, never your amounts', but Aarav's row says 'added ₹2,000 on payday'. Also, every member shares a fixed '₹25,000 each' target, so 72% tells anyone Aarav has about ₹18,000. The privacy promise is broken twice on the same screen. Ranking friends by % also creates peer pressure that can push someone on a stipend to over-invest.",
+        "fix": "Remove rupee amounts from activity rows (e.g. 'Aarav invested on payday'). Let each person set a private target so % cannot be turned back into an amount. Show squad-level progress by default and make per-person rows opt-in. Replace the leaderboard order with check-ins like 'everyone invested this month'."
+      },
+      {
+        "screen": "16-panic-check.png",
+        "issue": "The user tapped Withdraw. The sheet's large green primary button is 'Pause my SIP instead', a different action from the one they asked for, and their actual choice is the grey secondary. The copy states as fact that the fall is a 'temporary dip' that selling makes permanent, which implies a recovery is guaranteed. SEBI has warned against blocking redemptions, and this sheet could be read as a dark pattern. The red '₹755' loss figure adds anxiety at the exact moment the app wants calm. The same problem sits on 15-dip-coach.png: with Calm mode on, the most visible thing on Home is a red '-₹785'.",
+        "fix": "Make 'Continue to withdraw' and 'Pause SIP instead' equal-weight buttons. Add 'Withdraw part of it' and show exit load, tax and settlement date before confirming. Reword to 'Markets have often recovered from falls like this, but it isn't guaranteed'. Show the loss in neutral colour as a % of the stash, and in Dip Coach lead with the 75% held in steady funds, not the red rupee figure."
+      },
+      {
+        "screen": "18-invest.png",
+        "issue": "In discovery, 3-year returns are the largest coloured item on each card (+6.8% to +18.4%). Gold is at the top with +18.4% and is wrongly labelled 'BALANCED' (a gold FoF is a commodity fund). This invites chasing past performance. The custom 'swings' dots replace the mandatory SEBI riskometer, and they don't match it: a Nifty 50 index fund shows 4 of 5, while its riskometer is 'Very High'. Cards have no scheme or AMC names. 'Four funds cover most of what a first-time investor needs' reads as personalised advice from a distributor. 'Why this one for you' on 11-stash-detail-plan.png and the stock pros on 19-stock.png raise the same RIA/RA concern. 19-stock.png also has a near-vertical spike at the end of the price chart, and the sticky Buy button covers the 'Ask yourself before buying' checklist.",
+        "fix": "Move returns to secondary grey text and show them next to the benchmark and 5-year figures. Lead each card with the time horizon it suits. Show the official riskometer label and keep the swing dots only as an extra visual. Reclassify gold as 'Commodity'. Show full scheme names. Reword guidance to 'Commonly used for short-term goals', and on stock pages move the checklist above the Buy button and smooth the chart."
+      }
+    ],
+    "topDelights": [
+      "The F&O reality check (20-fno-reality.png) shows the SEBI-sourced '91 of every 100' as a dot grid with an age-specific stat before a 3-question gate. This is honest friction placed where it matters most.",
+      "Decode turns jargon into personal rupees: 'Expense ratio 0.18% · ₹19/yr for you' (11-stash-detail-plan.png, 12-decode.png). That beats any glossary.",
+      "The streak counts weeks invested, not app opens, with a freeze 'for broke months. No guilt.' (08-home-demo.png). Paired with the payday split and Skip/Pause, it fits irregular early-career cash flow."
+    ],
+    "quote": "I'd actually start my first ₹100 here this week, but the moment I spotted my friend's ₹2,000 on Squads and a green ₹6,68,590 'you'll likely have', I started wondering what else this app is promising that it can't keep."
+  }
+]
