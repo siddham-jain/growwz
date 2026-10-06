@@ -4,7 +4,7 @@ A redesign of Groww for India's 20–26 year-old, first-time investors: goal-fir
 
 **Live app:** https://siddham-jain.github.io/growwz/
 
-- **1-pager:** [ONE_PAGER.md](./ONE_PAGER.md) (also served at `/brief.html`, PDF in [docs/one-pager.pdf](./docs/one-pager.pdf))
+- **1-pager:** [docs/one-pager.pdf](./docs/one-pager.pdf) (source [docs/one-pager.html](./docs/one-pager.html), also served at `/brief.html`)
 - **Evals:** [EVALS.md](./EVALS.md) (also served at `/evals.html`), latest scorecard in [evals/results/SCORECARD.md](./evals/results/SCORECARD.md)
 - **Screens:** [docs/screens](./docs/screens)
 
@@ -19,7 +19,7 @@ npm run eval       # builds, serves, runs every eval, writes evals/results/SCORE
 
 The evals use the locally installed Google Chrome (`channel: "chrome"`), so there's no browser download.
 
-On desktop the app sits in a phone frame, with one-click "moments" for reviewers: payday, a market dip, the F&O gate, a Byte, Squads. On mobile it runs full-screen. The **You** tab has the same demo controls.
+On larger screens the app sits in a phone frame on a single stage that scales to fit the window, so nothing scrolls. It has one-click "moments" for reviewers: payday, a market dip, the F&O gate, a Byte, Squads. On phones it runs full-screen. The **You** tab has the same demo controls.
 
 ## Stack
 
@@ -33,9 +33,17 @@ src/lib/store.ts     app state, starter-plan allocation, demo account
 src/data/            funds, goal templates, stocks, Bytes, glossary
 src/screens/         one file per screen
 evals/               journeys, suitability matrix, copy lint, a11y, screenshots, persona results
-scripts/build-docs.ts  renders ONE_PAGER.md / EVALS.md into public/*.html
+scripts/build-docs.ts  fills docs/one-pager.html (qr, links, screenshots) and renders EVALS.md into public/
 ```
 
 ## Deploy
 
-`.github/workflows/deploy.yml` publishes `dist/` to GitHub Pages (https://siddham-jain.github.io/growwz/) on every push to `main`. The build uses relative asset paths, so it also works on any static host.
+GitHub Pages serves the `gh-pages` branch, which holds a prebuilt `dist/`. To publish:
+
+```bash
+npm run build && touch dist/.nojekyll
+cd dist && git init -b gh-pages && git add -A && git commit -m "deploy: build" \
+  && git push -f https://github.com/siddham-jain/growwz.git gh-pages && rm -rf .git
+```
+
+Asset paths are relative, so `dist/` also works on any static host.

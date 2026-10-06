@@ -3,7 +3,9 @@
 ## [Unreleased]
 
 ### Added
-- Deploy to GitHub Pages as growwz.
+- Redesign the 1-pager as a single A4 page with live link, QR, evals summary, memes and stickers.
+- Fit the desktop presentation on one scaled, scroll-free stage at any screen size.
+- Deploy to GitHub Pages as growwz from a prebuilt gh-pages branch.
 - Pair Plus Jakarta Sans for headings and money with Inter for body text.
 - Add tax-first slice, lean-month progress and no-auto-debit promise to irregular income splits.
 - Add IPO reality card, adjustable Spice pot cap and new-stash commitment totals.
@@ -36,6 +38,8 @@
 - Close the decode sheet on navigation.
 
 ### Decisions
+- The desktop stage is designed at a fixed size and scaled to the viewport — the only way to guarantee no page scroll at every size without reflowing the phone.
+- Memes are text-and-emoji formats, not image macros — keeps the 1-pager free of copyrighted images and crisp in print.
 - Fund bucket is chosen by time horizon first, risk comfort only nudges one notch — money needed within 2 years never goes into equity, regardless of stated appetite.
 - Starter stashes shrink to a reachable first milestone instead of pushing the deadline out — a "goal in 2034" on day one kills motivation.
 - Primary CTA is Groww mint with dark green text (6.2:1) instead of white (≈2:1) — keeps the brand colour and passes WCAG AA.

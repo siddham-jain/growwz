@@ -1,5 +1,8 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { marked } from "marked";
+import QRCode from "qrcode";
+
+const appUrl = "https://siddham-jain.github.io/growwz/";
 
 const style = `
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
@@ -32,22 +35,28 @@ const style = `
   @media print {
     body { background: #fff; }
     main { margin: 0; padding: 0; border: 0; max-width: none; }
-    .compact h1 { font-size: 21px; }
-    .compact h2 { font-size: 12px; margin: 7px 0 2px; padding-top: 5px; }
-    .compact p, .compact li { font-size: 9.6px; line-height: 1.38; margin: 2px 0; }
-    .compact ul, .compact ol { margin: 2px 0; }
-    .compact .brand { margin-bottom: 6px; font-size: 11px; }
   }
 `;
 
 const logo = `<svg viewBox="0 0 64 64"><defs><clipPath id="c"><circle cx="32" cy="32" r="30"/></clipPath></defs><g clip-path="url(#c)"><rect width="64" height="64" fill="#5367FF"/><path d="M0 38 L18 28 L30 36 L46 20 L64 26 V64 H0Z" fill="#00D09C"/></g></svg>`;
 
-function page(source: string, target: string, title: string, compact: boolean) {
+function page(source: string, target: string, title: string) {
   const body = marked.parse(readFileSync(source, "utf8"), { async: false }) as string;
-  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title}</title><link rel="icon" href="./favicon.svg"><style>${style}</style></head><body><main class="${compact ? "compact" : ""}"><div class="brand">${logo} Groww · Gen Z redesign</div>${body}</main></body></html>`;
+  const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title}</title><link rel="icon" href="./favicon.svg"><style>${style}</style></head><body><main><div class="brand">${logo} Groww · Gen Z redesign</div>${body}</main></body></html>`;
   writeFileSync(target, html);
 }
 
-page("ONE_PAGER.md", "public/brief.html", "Groww for Gen Z — 1-pager", true);
-page("EVALS.md", "public/evals.html", "Groww for Gen Z — Evals", false);
+// the 1-pager is hand-designed html; only the qr code, links and screenshots are filled in here
+const qr = await QRCode.toString(appUrl, { type: "svg", margin: 0, color: { dark: "#0b2a20", light: "#ffffff" } });
+const brief = readFileSync("docs/one-pager.html", "utf8")
+  .replaceAll("{{QR}}", qr)
+  .replaceAll("{{URL}}", appUrl)
+  .replaceAll("{{URL_SHORT}}", appUrl.replace(/^https:\/\//, "").replace(/\/$/, ""));
+writeFileSync("public/brief.html", brief);
+mkdirSync("public/brief", { recursive: true });
+copyFileSync("docs/screens/08-home-demo.png", "public/brief/home.png");
+copyFileSync("docs/screens/14b-freelancer-payment-split.png", "public/brief/payday.png");
+copyFileSync("docs/screens/20-fno-reality.png", "public/brief/fno.png");
+
+page("EVALS.md", "public/evals.html", "Groww for Gen Z — Evals");
 console.log("docs built");

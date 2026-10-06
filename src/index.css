@@ -73,7 +73,7 @@
   --shadow-card: var(--shadow);
 }
 
-html, body, #root { height: 100%; }
+html, body, #root { height: 100%; overflow: hidden; overscroll-behavior: none; }
 body {
   margin: 0;
   background: var(--shell);

@@ -20,16 +20,15 @@ import { You } from "./screens/You";
 
 const tabRoutes = ["/", "/invest", "/learn", "/squads", "/you"];
 
-function useIsDesktop() {
-  const query = "(min-width: 960px)";
-  const [matches, setMatches] = useState(() => window.matchMedia(query).matches);
+function useViewport() {
+  const read = () => ({ width: window.innerWidth, height: window.innerHeight });
+  const [viewport, setViewport] = useState(read);
   useEffect(() => {
-    const media = window.matchMedia(query);
-    const listener = () => setMatches(media.matches);
-    media.addEventListener("change", listener);
-    return () => media.removeEventListener("change", listener);
+    const listener = () => setViewport(read());
+    window.addEventListener("resize", listener);
+    return () => window.removeEventListener("resize", listener);
   }, []);
-  return matches;
+  return viewport;
 }
 
 function StatusBar() {
@@ -101,15 +100,16 @@ function Phone({ framed }: { framed: boolean }) {
 
 export default function App() {
   const dark = useStore((state) => state.settings.dark);
-  const isDesktop = useIsDesktop();
+  const { width, height } = useViewport();
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  if (!isDesktop) return <Phone framed={false} />;
+  // phone-sized screens get the app itself; anything bigger gets the scaled presentation stage
+  if (width < 600 || Math.min(width, height) < 520) return <Phone framed={false} />;
   return (
-    <DesktopShell>
+    <DesktopShell width={width} height={height}>
       <Phone framed />
     </DesktopShell>
   );
