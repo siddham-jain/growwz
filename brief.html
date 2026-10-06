@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Groww, for your first ₹100 — 1-pager</title>
+<link rel="icon" href="./favicon.svg">
+<style>
+  /* google docs defaults: arial, black text, plain headings, 1.15 line spacing */
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f1f3f4; font-family: Arial, Helvetica, sans-serif; color: #000; font-size: 11pt; line-height: 1.2; }
+  .page { width: 210mm; min-height: 297mm; margin: 24px auto; background: #fff; padding: 11mm 16mm; box-shadow: 0 1px 3px rgba(60,64,67,.3); }
+  h1 { font-size: 22pt; font-weight: 400; margin: 0 0 1pt; }
+  .subtitle { font-size: 12pt; color: #666; margin: 0 0 5pt; }
+  h2 { font-size: 13pt; font-weight: 700; margin: 10pt 0 3pt; }
+  p { margin: 0 0 3pt; }
+  ul { margin: 0 0 3pt; padding-left: 16pt; }
+  li { margin: 0 0 1pt; }
+  a { color: #1155cc; }
+  table { border-collapse: collapse; width: 100%; margin: 3pt 0 4pt; }
+  td, th { border: 1px solid #999; padding: 2pt 5pt; vertical-align: top; text-align: left; font-size: 10.5pt; }
+  th { background: #f3f3f3; font-weight: 700; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14pt; }
+  .small { font-size: 10pt; color: #444; }
+  @page { size: A4; margin: 18mm 20mm; }
+  @media print { body { background: #fff; } .page { width: auto; margin: 0; padding: 0; box-shadow: none; min-height: 0; } }
+</style>
+</head>
+<body>
+<main class="page">
+  <h1>Groww, for your first ₹100</h1>
+  <p class="subtitle">Redesigning Groww for India's 20–26 year-old, first-time investors</p>
+  <p><b>Live app:</b> <a href="https://siddham-jain.github.io/growwz/">siddham-jain.github.io/growwz</a> &nbsp;·&nbsp; <b>Full evals:</b> <a href="https://siddham-jain.github.io/growwz/evals.html">siddham-jain.github.io/growwz/evals.html</a></p>
+
+  <h2>1. The problem</h2>
+  <p>Access is solved: 56% of new NSE investors are under 30. What fails is what happens next. A first-timer with small, irregular income faces 1,000+ funds, daily P&amp;L and one-tap F&amp;O. They either <b>freeze</b> (empty account) or <b>gamble</b> (91% of F&amp;O traders lost money in FY25, per SEBI). The job: <b>build a lasting habit and get them through their first market dip.</b></p>
+
+  <div class="cols">
+    <div>
+      <h2>2. In scope</h2>
+      <ul>
+        <li>Onboarding to first ₹100 (KYC assumed done)</li>
+        <li>Goal-based stashes with horizon-picked funds</li>
+        <li>Flexible contributions for irregular income</li>
+        <li>Calm mode and dip guidance</li>
+        <li>In-context learning and jargon decoding</li>
+        <li>F&amp;O guardrails</li>
+      </ul>
+    </div>
+    <div>
+      <h2>3. Out of scope</h2>
+      <ul>
+        <li>KYC (already strong)</li>
+        <li>Live data, payments, order routing (prototype)</li>
+        <li>Loans/BNPL (works against the goal)</li>
+        <li>Crypto (unregulated)</li>
+        <li>Personalised advice (needs SEBI RIA)</li>
+        <li>Vernacular (next step)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>4. Solution and why</h2>
+  <ul>
+    <li><b>Goals, not products.</b> Users name a goal; the time horizon picks the fund. Money needed within 2 years never goes into equity. <i>Why:</i> removes choice paralysis and unsuitable picks.</li>
+    <li><b>Fit irregular income.</b> ₹100 minimum, a one-tap payday split for salaries, a % of each payment for gig and pocket money, skip/pause anytime. <i>Why:</i> fixed SIPs bounce and feel like failure.</li>
+    <li><b>Calm by default.</b> Goal progress instead of daily P&amp;L; context during dips. <i>Why:</i> the first red number is the biggest churn point.</li>
+    <li><b>Learn in place.</b> Every jargon term is tappable; 60-second lessons. <i>Why:</i> confusion makes people leave, not ask.</li>
+    <li><b>Friction only where it protects.</b> F&amp;O gets loss data, a short readiness check, a one-time cool-off and a loss limit. <i>Why:</i> guard the riskiest path without blocking it.</li>
+  </ul>
+
+  <h2>5. How I tested it</h2>
+  <table>
+    <tr><th>Check</th><th>Result</th></tr>
+    <tr><td>Taps from opening the app to first ₹100 invested</td><td>12</td></tr>
+    <tr><td>Automated evals (journeys, suitability logic, copy, accessibility)</td><td>41 / 41 pass</td></tr>
+    <tr><td>Short-term money placed in equity, across every horizon × risk profile</td><td>0 cases</td></tr>
+    <tr><td>Unexplained jargon / serious WCAG AA issues</td><td>0 / 0</td></tr>
+    <tr><td>Synthetic personas who would start (round 1 → round 2)</td><td>3/5 → 5/5</td></tr>
+  </table>
+  <p class="small">Personas are synthetic and directional; real user tests are next. <b>Success metric:</b> % of new 20–26 users with 3+ contributions by day 90. <b>Assumptions:</b> KYC done, UPI AutoPay available, illustrative data.</p>
+</main>
+</body>
+</html>
