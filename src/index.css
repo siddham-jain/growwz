@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource-variable/inter";
+@import "@fontsource-variable/plus-jakarta-sans";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -49,6 +50,7 @@
 
 @theme inline {
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans Variable", "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
@@ -77,11 +79,25 @@ body {
   background: var(--shell);
   color: var(--ink);
   font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss03";
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
 }
 button { cursor: pointer; }
+
+/* display face for headings, heavy labels and money; inter stays for reading */
+h1, h2, h3, .font-extrabold, .num {
+  font-family: var(--font-display);
+  font-feature-settings: normal;
+}
+h1, h2, h3 { letter-spacing: -0.012em; text-wrap: balance; }
+.font-extrabold { letter-spacing: -0.02em; }
 .num { font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+p { text-wrap: pretty; }
+.uppercase { font-family: var(--font-display); letter-spacing: 0.08em; }
 .no-scrollbar { scrollbar-width: none; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 :focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 8px; }

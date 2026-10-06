@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowUpRight, Moon, Sun } from "lucide-react";
-import { useStore } from "../lib/store";
+import { demoName, useStore } from "../lib/store";
 import { GrowwLogo } from "./ui";
 
 const differences = [
@@ -15,7 +15,8 @@ const differences = [
 
 export function DesktopShell({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
-  const { onboarded, dip, settings, loadDemo, reset, triggerPayday, setDip, setSetting } = useStore();
+  const { onboarded, dip, settings, profile, loadDemo, reset, triggerPayday, setDip, setSetting } = useStore();
+  const demoOwner = profile.name.trim() || demoName;
 
   const ensureAccount = () => {
     if (!onboarded) loadDemo();
@@ -23,7 +24,7 @@ export function DesktopShell({ children }: { children: ReactNode }) {
 
   const moments: { label: string; hint: string; run: () => void }[] = [
     { label: "Start fresh", hint: "60-second onboarding → first ₹100", run: () => { reset(); navigate("/welcome"); } },
-    { label: "Riya's account, 5 months in", hint: "First job, Bengaluru, ₹42k/month", run: () => { loadDemo(); navigate("/"); } },
+    { label: `${demoOwner}'s account, 5 months in`, hint: "First job, Bengaluru, ₹42k/month", run: () => { loadDemo(); navigate("/"); } },
     { label: "💸 Salary lands", hint: "Payday split, one tap", run: () => { ensureAccount(); navigate("/"); setTimeout(triggerPayday, 300); } },
     { label: dip ? "📈 End the market dip" : "📉 Market drops 4%", hint: "See Dip Coach", run: () => { ensureAccount(); navigate("/"); setDip(!dip); } },
     { label: "⚡ Try to trade F&O", hint: "Reality check + cool-off", run: () => { ensureAccount(); navigate("/fno"); } },

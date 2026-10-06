@@ -43,9 +43,10 @@ type Step = (typeof steps)[number];
 
 export function Onboarding() {
   const navigate = useNavigate();
-  const { completeOnboarding, loadDemo } = useStore();
+  const { completeOnboarding, loadDemo, setName } = useStore();
+  const storedName = useStore((state) => state.profile.name);
   const [step, setStep] = useState<Step>("intro");
-  const [profile, setProfile] = useState<Profile>({ name: "", vibe: "firstjob", rhythm: "monthly", payday: 7, risk: "steady", monthly: 1500, idle: 0 });
+  const [profile, setProfile] = useState<Profile>({ name: storedName, vibe: "firstjob", rhythm: "monthly", payday: 7, risk: "steady", monthly: 1500, idle: 0 });
   const [vibeChosen, setVibeChosen] = useState(false);
   const [goals, setGoals] = useState<string[]>([]);
   const index = steps.indexOf(step);
@@ -137,7 +138,10 @@ export function Onboarding() {
                 aria-label="Your name"
                 placeholder="Your first name"
                 value={profile.name}
-                onChange={(event) => update({ name: event.target.value })}
+                onChange={(event) => {
+                  update({ name: event.target.value });
+                  setName(event.target.value);
+                }}
                 onKeyDown={(event) => event.key === "Enter" && profile.name.trim() && next()}
                 className="mt-6 w-full border-b-2 border-line focus:border-mint bg-transparent text-[28px] font-bold py-2 outline-none placeholder:text-ink-3"
               />

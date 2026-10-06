@@ -3,6 +3,8 @@
 ## [Unreleased]
 
 ### Added
+- Deploy to GitHub Pages as growwz.
+- Pair Plus Jakarta Sans for headings and money with Inter for body text.
 - Add tax-first slice, lean-month progress and no-auto-debit promise to irregular income splits.
 - Add IPO reality card, adjustable Spice pot cap and new-stash commitment totals.
 - Add regression evals for plan arithmetic, irregular income, squad privacy and projection ranges.
@@ -26,6 +28,7 @@
 - Make step-up opt-in and the F&O cool-off one-time.
 
 ### Fixed
+- Keep the user's typed name when jumping into the demo account; default demo name is Parth.
 - Show "Not started yet" instead of "On track" before the first instalment.
 - Compare goal ETA at month level so on-deadline goals aren't marked late.
 - Make starter plans add up exactly to the chosen amount.

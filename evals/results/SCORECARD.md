@@ -14,7 +14,7 @@ Generated 2026-10-06 · **41 passed, 0 failed, 0 flaky**
 | Squads | none | 91 | 58 |
 | Stash detail | none | 83 | 120 |
 | Stock | none | 93 | 72 |
-| You | none | 74 | 70 |
+| You | none | 75 | 71 |
 
 ## Accessibility
 

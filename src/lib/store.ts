@@ -98,6 +98,7 @@ interface State {
   startFnoCooloff: () => void;
   loadDemo: () => void;
   reset: () => void;
+  setName: (name: string) => void;
   showToast: (message: string | null) => void;
   setNotice: (notice: Notice | null) => void;
   setCelebrate: (kind: string | null) => void;
@@ -216,10 +217,12 @@ export const incomeMoment: Record<Vibe, { source: string; amount: number; title:
   student: { source: "Pocket money", amount: 4000, title: "Pocket money's in", body: "₹400 to future-you? Only if it works this month." },
 };
 
-function demoState() {
+export const demoName = "Parth";
+
+function demoState(name: string) {
   const now = new Date();
   const monthsAgo = (months: number) => addMonths(now, -months).toISOString();
-  const profile: Profile = { name: "Riya", vibe: "firstjob", rhythm: "monthly", payday: 7, risk: "steady", monthly: 7500, idle: 18000 };
+  const profile: Profile = { name, vibe: "firstjob", rhythm: "monthly", payday: 7, risk: "steady", monthly: 7500, idle: 18000 };
   const stashes: Stash[] = [
     {
       ...makeStash({
@@ -356,7 +359,10 @@ export const useStore = create<State>()(
 
       startFnoCooloff: () => set({ fnoUnlockAt: Date.now() + 24 * 60 * 60 * 1000 }),
 
-      loadDemo: () => set({ ...demoState(), notice: null, celebrate: null, toast: null }),
+      // the demo account keeps whatever name the user already gave us
+      loadDemo: () => set({ ...demoState(get().profile.name.trim() || demoName), notice: null, celebrate: null, toast: null }),
+
+      setName: (name) => set({ profile: { ...get().profile, name } }),
 
       reset: () => set({ ...freshState, notice: null, celebrate: null, toast: null, settings: { ...freshState.settings, dark: get().settings.dark } }),
 
@@ -367,7 +373,7 @@ export const useStore = create<State>()(
     }),
     {
       name: "groww-genz",
-      version: 2,
+      version: 3,
       migrate: () => ({ ...freshState }) as never,
       partialize: ({ notice, toast, celebrate, decode, ...rest }) => rest,
     },

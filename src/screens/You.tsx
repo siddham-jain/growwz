@@ -59,7 +59,7 @@ export function You() {
       <ul className="mx-5 rounded-3xl border border-line bg-surface divide-y divide-line">
         <ActionRow icon={<span className="text-[18px]">💸</span>} title="Simulate payday" onClick={() => { navigate("/"); setTimeout(triggerPayday, 250); }} />
         <ActionRow icon={<TrendingDown size={20} />} title={dip ? "End the market dip" : "Simulate a 4% market dip"} onClick={() => { setDip(!dip); navigate("/"); }} />
-        <ActionRow icon={<ChartLine size={20} />} title="Load Riya's 5-month-old account" onClick={() => { loadDemo(); navigate("/"); }} />
+        <ActionRow icon={<ChartLine size={20} />} title="Load a 5-month-old demo account" onClick={() => { loadDemo(); navigate("/"); }} />
         <ActionRow icon={<RotateCcw size={20} />} title="Start over from onboarding" onClick={() => { reset(); navigate("/welcome"); }} danger />
       </ul>
 

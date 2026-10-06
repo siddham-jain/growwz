@@ -2,16 +2,17 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { marked } from "marked";
 
 const style = `
-  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
   :root { --mint: #00d09c; --ink: #2b2d3a; --ink-2: #5c5e6d; --line: #e9e9eb; --soft: #e6faf4; }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--ink); background: #f1f3f5; line-height: 1.55; -webkit-font-smoothing: antialiased; }
   main { max-width: 820px; margin: 32px auto; background: #fff; border: 1px solid var(--line); border-radius: 24px; padding: 44px 52px; }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--ink-2); font-size: 14px; margin-bottom: 18px; }
   .brand svg { width: 24px; height: 24px; }
-  h1 { font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 4px; }
+  h1, h2, h3, th, .brand { font-family: "Plus Jakarta Sans", Inter, system-ui, sans-serif; }
+  h1 { font-size: 32px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 800; margin: 0 0 4px; }
   h1 + p em { color: var(--ink-2); font-style: normal; }
-  h2 { font-size: 17px; margin: 26px 0 8px; padding-top: 14px; border-top: 1px solid var(--line); letter-spacing: -0.01em; }
+  h2 { font-size: 17px; margin: 26px 0 8px; padding-top: 14px; border-top: 1px solid var(--line); letter-spacing: -0.02em; font-weight: 800; }
   h3 { font-size: 15px; margin: 18px 0 6px; }
   p, li { font-size: 14.5px; }
   ul, ol { padding-left: 20px; margin: 6px 0; }

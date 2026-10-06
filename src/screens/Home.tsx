@@ -29,7 +29,7 @@ export function Home() {
           <div className="h-11 w-11 rounded-full bg-mint-soft grid place-items-center text-[18px] font-bold text-pos">{profile.name.slice(0, 1).toUpperCase()}</div>
           <div>
             <div className="text-[13px] text-ink-2">{greeting},</div>
-            <div className="text-[18px] font-bold leading-tight">{profile.name} 👋</div>
+            <div className="text-[19px] font-extrabold leading-tight">{profile.name} 👋</div>
           </div>
         </div>
         <button aria-label="Notifications" className="h-11 w-11 grid place-items-center rounded-full hover:bg-surface-2">

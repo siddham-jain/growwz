@@ -1,6 +1,8 @@
-# Groww, for your first ₹100
+# growwz — Groww, for your first ₹100
 
 A redesign of Groww for India's 20–26 year-old, first-time investors: goal-first, calm by default, built for irregular income.
+
+**Live app:** https://siddham-jain.github.io/growwz/
 
 - **1-pager:** [ONE_PAGER.md](./ONE_PAGER.md) (also served at `/brief.html`, PDF in [docs/one-pager.pdf](./docs/one-pager.pdf))
 - **Evals:** [EVALS.md](./EVALS.md) (also served at `/evals.html`), latest scorecard in [evals/results/SCORECARD.md](./evals/results/SCORECARD.md)
@@ -36,4 +38,4 @@ scripts/build-docs.ts  renders ONE_PAGER.md / EVALS.md into public/*.html
 
 ## Deploy
 
-`.github/workflows/deploy.yml` publishes `dist/` to GitHub Pages on every push to `main`. The build uses relative asset paths, so it also works on any static host.
+`.github/workflows/deploy.yml` publishes `dist/` to GitHub Pages (https://siddham-jain.github.io/growwz/) on every push to `main`. The build uses relative asset paths, so it also works on any static host.

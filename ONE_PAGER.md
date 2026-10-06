@@ -54,4 +54,4 @@ The psychology I designed around:
 
 **Assumptions.** KYC is done; Groww UPI AutoPay handles mandates; funds, returns and prices are illustrative; stats are from SEBI's FY25 F&O study and NSE investor data.
 
-**Links:** [App](./index.html) · [Evals](./evals.html)
+**Links:** [App](https://siddham-jain.github.io/growwz/) · [Evals](https://siddham-jain.github.io/growwz/evals.html)
