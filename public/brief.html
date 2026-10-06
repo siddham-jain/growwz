@@ -8,89 +8,77 @@
 <style>
   /* google docs defaults: arial, black text, plain headings, 1.15 line spacing */
   * { box-sizing: border-box; }
-  body { margin: 0; background: #f1f3f4; font-family: Arial, Helvetica, sans-serif; color: #000; font-size: 9.6pt; line-height: 1.18; }
+  body { margin: 0; background: #f1f3f4; font-family: Arial, Helvetica, sans-serif; color: #000; font-size: 11pt; line-height: 1.2; }
   .page { width: 210mm; min-height: 297mm; margin: 24px auto; background: #fff; padding: 11mm 16mm; box-shadow: 0 1px 3px rgba(60,64,67,.3); }
-  h1 { font-size: 19pt; font-weight: 400; margin: 0 0 1pt; }
-  .subtitle { font-size: 10.5pt; color: #666; margin: 0 0 5pt; }
-  h2 { font-size: 11.5pt; font-weight: 700; margin: 7pt 0 2pt; }
+  h1 { font-size: 22pt; font-weight: 400; margin: 0 0 1pt; }
+  .subtitle { font-size: 12pt; color: #666; margin: 0 0 5pt; }
+  h2 { font-size: 13pt; font-weight: 700; margin: 10pt 0 3pt; }
   p { margin: 0 0 3pt; }
   ul { margin: 0 0 3pt; padding-left: 16pt; }
   li { margin: 0 0 1pt; }
   a { color: #1155cc; }
   table { border-collapse: collapse; width: 100%; margin: 3pt 0 4pt; }
-  td, th { border: 1px solid #999; padding: 2pt 5pt; vertical-align: top; text-align: left; font-size: 9.2pt; }
+  td, th { border: 1px solid #999; padding: 2pt 5pt; vertical-align: top; text-align: left; font-size: 10.5pt; }
   th { background: #f3f3f3; font-weight: 700; }
   .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14pt; }
-  .small { font-size: 8.6pt; color: #444; }
-  @page { size: A4; margin: 11mm 16mm; }
+  .small { font-size: 10pt; color: #444; }
+  @page { size: A4; margin: 18mm 20mm; }
   @media print { body { background: #fff; } .page { width: auto; margin: 0; padding: 0; box-shadow: none; min-height: 0; } }
 </style>
 </head>
 <body>
 <main class="page">
-  <h1>Groww, for your first ₹100 🌱</h1>
+  <h1>Groww, for your first ₹100</h1>
   <p class="subtitle">Redesigning Groww for India's 20–26 year-old, first-time investors</p>
   <p><b>Live app:</b> <a href="https://siddham-jain.github.io/growwz/">siddham-jain.github.io/growwz</a> &nbsp;·&nbsp; <b>Full evals:</b> <a href="https://siddham-jain.github.io/growwz/evals.html">siddham-jain.github.io/growwz/evals.html</a></p>
 
-  <h2>1. My take on the problem</h2>
-  <p>Access is solved. Groww opens an account in minutes, and 56% of new NSE investors are now under 30. The problem is what happens <i>after</i> the account opens. A 22-year-old arrives with a small, irregular income, a finfluencer feed, and no idea which of 1,000+ funds is "right". The app greets them with tickers, red/green P&amp;L and F&amp;O one tap away.</p>
-  <p>So they either <b>freeze</b> (the account sits empty) or <b>gamble</b>: SEBI found 91% of individual F&amp;O traders lost money in FY25, and 89% of under-30 traders lost. Both end in churn. The real job: <b>turn an anxious first-timer into someone with a lasting habit, and get them through their first market dip.</b> That's Groww's most valuable customer: joins at 22, stays 30 years.</p>
-  <p><b>Psychology I designed around:</b> present bias → start from goals · lumpy income → flexible by default · loss aversion → calm by default · jargon shame → explain terms in place · dopamine apps → reward consistency · comparison → share %, never ₹.</p>
+  <h2>1. The problem</h2>
+  <p>Access is solved: 56% of new NSE investors are under 30. What fails is what happens next. A first-timer with small, irregular income faces 1,000+ funds, daily P&amp;L and one-tap F&amp;O. They either <b>freeze</b> (empty account) or <b>gamble</b> (91% of F&amp;O traders lost money in FY25, per SEBI). The job: <b>build a lasting habit and get them through their first market dip.</b></p>
 
   <div class="cols">
     <div>
       <h2>2. In scope</h2>
       <ul>
-        <li>Onboarding → starter plan → first ₹100 (KYC assumed done)</li>
-        <li>Goal-based Stashes, with the fund picked from the time horizon</li>
-        <li>Payday split, %-of-payment splits for gigs, skip/pause, streaks with freezes</li>
-        <li>Calm mode, Dip Coach and a neutral panic-sell check</li>
-        <li>60-second "Bytes" lessons and tap-to-decode jargon</li>
-        <li>F&amp;O reality check and cool-off, a capped "Spice pot", Squads</li>
+        <li>Onboarding to first ₹100 (KYC assumed done)</li>
+        <li>Goal-based stashes with horizon-picked funds</li>
+        <li>Flexible contributions for irregular income</li>
+        <li>Calm mode and dip guidance</li>
+        <li>In-context learning and jargon decoding</li>
+        <li>F&amp;O guardrails</li>
       </ul>
     </div>
     <div>
       <h2>3. Out of scope</h2>
       <ul>
-        <li>KYC/account opening: already strong on Groww</li>
-        <li>Live prices, payments, order routing: data is illustrative</li>
-        <li>Loans/BNPL: debt works against the goal</li>
-        <li>Crypto: unregulated in India</li>
-        <li>F&amp;O trading screens and paper trading: only the gate</li>
-        <li>Hinglish (next step) and personalised advice (needs SEBI RIA)</li>
+        <li>KYC (already strong)</li>
+        <li>Live data, payments, order routing (prototype)</li>
+        <li>Loans/BNPL (works against the goal)</li>
+        <li>Crypto (unregulated)</li>
+        <li>Personalised advice (needs SEBI RIA)</li>
+        <li>Vernacular (next step)</li>
       </ul>
     </div>
   </div>
 
-  <h2>4. The solution: goal-first, calm-by-default Groww</h2>
+  <h2>4. Solution and why</h2>
   <ul>
-    <li><b>Ask "what's it for?", not "what to buy?"</b> Each goal becomes a Stash. The time horizon picks the fund (Steady / Balanced / Growth) and says why. Money needed within 2 years never goes into equity; unaffordable goals become an honest first milestone.</li>
-    <li><b>Fit the money people actually have.</b> ₹100 minimum. Salaries get a one-tap payday split; gig and pocket money get a % of each payment. Skip or pause anytime. Streaks count weeks invested, with freezes for broke months.</li>
-    <li><b>Calm by default.</b> Home shows goal progress, not today's P&amp;L. In a dip, Dip Coach explains what moved and what usually happens next.</li>
-    <li><b>Learn without leaving.</b> Every jargon word is tappable, and story-style Bytes teach one idea in 60 seconds.</li>
-    <li><b>Friction only where it protects.</b> F&amp;O gets SEBI's loss data, a 3-question check, a one-time cool-off and a self-set loss limit; a capped Spice pot gives risk-seekers room.</li>
-    <li><b>Social, without comparison.</b> Squads save for the same trip and share progress %, never rupees.</li>
+    <li><b>Goals, not products.</b> Users name a goal; the time horizon picks the fund. Money needed within 2 years never goes into equity. <i>Why:</i> removes choice paralysis and unsuitable picks.</li>
+    <li><b>Fit irregular income.</b> ₹100 minimum, a one-tap payday split for salaries, a % of each payment for gig and pocket money, skip/pause anytime. <i>Why:</i> fixed SIPs bounce and feel like failure.</li>
+    <li><b>Calm by default.</b> Goal progress instead of daily P&amp;L; context during dips. <i>Why:</i> the first red number is the biggest churn point.</li>
+    <li><b>Learn in place.</b> Every jargon term is tappable; 60-second lessons. <i>Why:</i> confusion makes people leave, not ask.</li>
+    <li><b>Friction only where it protects.</b> F&amp;O gets loss data, a short readiness check, a one-time cool-off and a loss limit. <i>Why:</i> guard the riskiest path without blocking it.</li>
   </ul>
-  <p><b>Why this works:</b> it targets the two biggest churn points, the empty account and the first dip, and the first win (₹100 invested, a celebration, week 1 of a streak) lands within 12 taps.</p>
 
+  <h2>5. How I tested it</h2>
   <table>
-    <tr><th colspan="2">Meme break 😌 (because it's for Gen Z)</th></tr>
-    <tr><td style="width:50%">🙅 Scrolling 1,000 funds looking for "the best one"</td><td>😎 Typing "MacBook fund" and letting the timeline pick</td></tr>
-    <tr><td>📉 Nifty −4%. Old me: "this is fine" 🐶🔥 (I sold)</td><td>🧘 Dip Coach: "your Goa money barely moved." Actually fine.</td></tr>
-  </table>
-
-  <h2>5. How I tested it (evals)</h2>
-  <table>
-    <tr><th>What I checked</th><th>Result</th></tr>
-    <tr><td>Taps from opening the app to the first ₹100 invested</td><td>12</td></tr>
+    <tr><th>Check</th><th>Result</th></tr>
+    <tr><td>Taps from opening the app to first ₹100 invested</td><td>12</td></tr>
     <tr><td>Automated evals (journeys, suitability logic, copy, accessibility)</td><td>41 / 41 pass</td></tr>
-    <tr><td>Cases of under-2-year money put in equity, across every horizon × risk profile</td><td>0</td></tr>
-    <tr><td>Unexplained jargon on decision screens / serious WCAG AA issues</td><td>0 / 0</td></tr>
-    <tr><td>Synthetic personas who would start this week (round 1 → round 2)</td><td>3/5 → 5/5</td></tr>
+    <tr><td>Short-term money placed in equity, across every horizon × risk profile</td><td>0 cases</td></tr>
+    <tr><td>Unexplained jargon / serious WCAG AA issues</td><td>0 / 0</td></tr>
+    <tr><td>Synthetic personas who would start (round 1 → round 2)</td><td>3/5 → 5/5</td></tr>
   </table>
-  <p class="small">Two rounds of persona walkthroughs (student, first-jobber, freelancer, F&amp;O trader, expert reviewer) drove 25+ fixes. Personas are synthetic, so results are directional; real user tests come next.</p>
-
-  <p class="small" style="margin-top:4pt"><b>Measure:</b> % of 20–26 sign-ups with ≥3 contributions by day 90; guardrails: F&amp;O activation ↓, dip redemptions ↓, SIP bounces ↓. <b>Assumptions:</b> KYC done; UPI AutoPay for mandates; illustrative data; stats from SEBI's FY25 F&amp;O study and NSE.</p>
+  <p class="small">Personas are synthetic and directional; real user tests are next. <b>Success metric:</b> % of new 20–26 users with 3+ contributions by day 90. <b>Assumptions:</b> KYC done, UPI AutoPay available, illustrative data.</p>
 </main>
 </body>
 </html>
